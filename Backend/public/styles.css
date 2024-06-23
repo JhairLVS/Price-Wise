@@ -5,8 +5,8 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar contenido verticalmente */
-    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; 
+    justify-content: center; 
     margin-top: 70px;
 }
 
@@ -26,7 +26,7 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Asegura que la barra de navegación esté por encima del resto del contenido */
+    z-index: 1000; 
 }
 
 .nav-left h1 {
@@ -34,10 +34,10 @@ nav {
 }
 
 #search-form {
-    margin: 20px auto; /* Añadido un margen en la parte superior e inferior del formulario */
+    margin: 20px auto;
     text-align: center;
-    max-width: 600px; /* Añadido un ancho máximo para limitar el tamaño del formulario */
-    width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+    max-width: 600px; 
+    width: 100%; 
 }
 
 .results-container {
