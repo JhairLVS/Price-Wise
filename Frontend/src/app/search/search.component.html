@@ -1,0 +1,40 @@
+<div id="main-app">
+    <h1>Buscar Productos</h1>
+    <form id="search-form" (submit)="searchProducts($event)">
+        <input type="text" id="query" placeholder="Buscar..." name="query" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="results" class="results-container">
+        <div *ngFor="let result of results" class="result-card">
+            <img [src]="result.image" [alt]="result.title">
+            <div>
+                <h2>{{ result.title }}</h2>
+                <p><strong>{{ result.store }}</strong></p>
+                <p>{{ result.price }}</p>
+                <button (click)="showDetails(result)">Elegir</button>
+            </div>
+        </div>
+    </div>
+    <div id="details-container" *ngIf="selectedProduct">
+        <div id="product-details">
+            <h2>Detalles del Producto</h2>
+            <img [src]="selectedProduct.image" [alt]="selectedProduct.title">
+            <p><strong>{{ selectedProduct.title }}</strong></p>
+            <p>Precio: {{ selectedProduct.price }}</p>
+            <p>Tienda: {{ selectedProduct.store }}</p>
+            <p><a [href]="selectedProduct.link" target="_blank">Ver Producto</a></p>
+        </div>
+        <div id="price-comparison">
+            <h2>Comparación de Precios</h2>
+            <div *ngFor="let comparison of comparisons" class="comparison-card">
+                <img [src]="comparison.image" [alt]="comparison.title">
+                <div>
+                    <h2>{{ comparison.title }}</h2>
+                    <p><strong>{{ comparison.store }}</strong></p>
+                    <p>Precio: {{ comparison.price }}</p>
+                    <p><a [href]="comparison.link" target="_blank">Ver Producto</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
