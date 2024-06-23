@@ -4,15 +4,12 @@ const bcrypt = require('bcrypt');
 
 const router = express.Router();
 
-// Crear usuario de manera segura
 router.post('/usuarios', async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        // Generar el hash de la contraseña
-        const hashedPassword = await bcrypt.hash(password, 10); // Salt rounds: 10
+        const hashedPassword = await bcrypt.hash(password, 10); 
 
-        // Insertar usuario en la base de datos
         db.query(
             'INSERT INTO usuario (email, password) VALUES (?, ?)',
             [email, hashedPassword],
@@ -31,12 +28,11 @@ router.post('/usuarios', async (req, res) => {
     }
 });
 
-// Validar inicio de sesión
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        // Obtener el usuario de la base de datos por email
+      
         db.query(
             'SELECT * FROM usuario WHERE email = ?',
             [email],
@@ -46,7 +42,7 @@ router.post('/login', async (req, res) => {
                     res.status(500).send('An error occurred while fetching the user.');
                 } else {
                     if (results.length > 0) {
-                        // Comparar la contraseña ingresada con el hash almacenado
+                        
                         const match = await bcrypt.compare(password, results[0].password);
                         if (match) {
                             res.status(200).send('Login successful.');
