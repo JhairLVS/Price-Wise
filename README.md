@@ -3,7 +3,8 @@ Price Wise es una plataforma web en la que los usuarios pueden buscar precios a 
 **Desarrolladores**  
 
 -Lennin Jhair Vargas Soto jhairvargas611@gmail.com  
--Armando Navarro Pérez narmando097@gmail.com
+-Armando Navarro Pérez narmando097@gmail.com   
+-Raúl Nikolay Gutierrez Aranda zurcorgame@gmail.com   
 
 **Indicaciones**  
 
